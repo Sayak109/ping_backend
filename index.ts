@@ -51,7 +51,7 @@ io.on("connection", (socket) => {
 
 app.use(
   cors({
-    origin: "http://localhost:3000",
+    origin: process.env.WEB_BASE_URL,
     credentials: true,
   })
 );
