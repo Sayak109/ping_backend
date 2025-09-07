@@ -51,7 +51,7 @@ io.on("connection", (socket) => {
 
 app.use(
   cors({
-    origin: process.env.WEB_BASE_URL,
+    origin: process.env.WEB_BASE_URL!,
     credentials: true,
   })
 );
