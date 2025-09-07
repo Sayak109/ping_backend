@@ -10,7 +10,6 @@ export interface Users extends Document {
   google_id?: string;
 }
 
-// 2. Define the schema
 const UserSchema: Schema = new Schema<Users>(
   {
     full_name: { type: String, required: false },

@@ -58,19 +58,6 @@ export async function signUp(req: Request, res: Response): Promise<Response> {
   }
 }
 
-export async function getUserInfo(
-  req: Request,
-  res: Response
-): Promise<Response> {
-  try {
-    const user = req.user;
-
-    return res.status(200).json(success("User found", user));
-  } catch (err) {
-    return error(res, 400, "User not found");
-  }
-}
-
 export async function logout(req: Request, res: Response): Promise<Response> {
   try {
     res.clearCookie("token", {

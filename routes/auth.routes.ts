@@ -1,13 +1,16 @@
 import express from "express";
-import  {signIn, signUp, logout, getUserInfo, googleLogin} from "../controllers/auth.controller";
-import getUser from "../middleware/auth.middleware"
+import {
+  signIn,
+  signUp,
+  logout,
+  googleLogin,
+} from "../controllers/auth.controller";
+import getUser from "../middleware/auth.middleware";
 const router = express.Router();
 
 router.post("/signin", signIn);
 router.post("/signup", signUp);
 router.post("/google", googleLogin);
-router.post("/logout", getUser,logout);
-router.get("/user/me", getUser, getUserInfo);
-
+router.post("/logout", getUser, logout);
 
 export default router;

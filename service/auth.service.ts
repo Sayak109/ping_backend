@@ -19,16 +19,11 @@ async function signUpService(payload: SignUpPayload) {
   try {
     const { name, email, password, phone, picture } = payload;
 
-    // Check if email already exists
     const existingUser = await userModel.findOne({ email });
     if (existingUser) {
       throw new Error("Email already exists.");
     }
-
-    // Hash password
     const hashedPassword = await hashPassword(password);
-
-    // Create user
     const newUser = await userModel.create({
       full_name: name,
       email,
